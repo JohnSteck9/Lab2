@@ -27,8 +27,8 @@ def format_data(client):
     request_data = {"id": client.pop(0),
                     "first_name": client.pop(0),
                     "second_name": client.pop(0),
-                    "email": client.pop(0),
-                    "message_id": client.pop(0)}
+                    "email": client.pop(0),}
+
 
     return request_data
 

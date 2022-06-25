@@ -1,21 +1,21 @@
 from random import randint
 import csv
 
-FIRST_NAME = ["Short Story: The Truth About MOSCOW BURNED DOWN", "Best MOSCOW BURNED DOWN Android/iPhone Apps",
-         "Get Better MOSCOW BURNED DOWN Results By Following 3 Simple Steps",
-         "Here Is What You Should Do For Your MOSCOW BURNED DOWN",
-         "3 Tips About MOSCOW BURNED DOWN You Can't Afford To Miss",
-         "Apply These 5 Secret Techniques To Improve MOSCOW BURNED DOWN",
-         "3 Easy Ways To Make MOSCOW BURNED DOWN Faster", "3 Easy Ways To Make MOSCOW BURNED DOWN Faster"]
+FIRST_NAME = ["Short Story",
+         "Get Better",
+         "Here Is",
+         "3 Tips",
+         "Apply",
+         "3 Easy"]
 
 
 
-SECOND_NAME = ["Short Story: The Truth About MOSCOW BURNED DOWN", "Best MOSCOW BURNED DOWN Android/iPhone Apps",
-         "Get Better MOSCOW BURNED DOWN Results By Following 3 Simple Steps",
-         "Here Is What You Should Do For Your MOSCOW BURNED DOWN",
-         "3 Tips About MOSCOW BURNED DOWN You Can't Afford To Miss",
-         "Apply These 5 Secret Techniques To Improve MOSCOW BURNED DOWN",
-         "3 Easy Ways To Make MOSCOW BURNED DOWN Faster", "3 Easy Ways To Make MOSCOW BURNED DOWN Faster"]
+SECOND_NAME = ["Short Story22",
+         "Get Better22",
+         "Here Is22",
+         "3 Tips22",
+         "Apply22",
+         "3 Easy22"]
 
 EMAIL = ['Afghanistan', 'Aland Islands', 'Albania', 'Algeria', 'American Samoa', 'Andorra', 'Angola', 'Anguilla',
            'Antarctica', 'Antigua and Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan',
@@ -56,14 +56,11 @@ EMAIL = ['Afghanistan', 'Aland Islands', 'Albania', 'Algeria', 'American Samoa',
            'Venezuela, Bolivarian Republic of', 'Viet Nam', 'Virgin Islands, British', 'Virgin Islands, U.S.',
            'Wallis and Futuna', 'Yemen', 'Zambia', 'Zimbabwe']
 
-# MESSAGE_ID = ["pending", "end", "creating"]
-
-
 
 def generate_data():
     with open('sample_data.csv', 'w') as f:
         writer = csv.writer(f)
-        writer.writerow(["id", "first_name", "second_name", "email", "message_id"])
+        writer.writerow(["id", "first_name", "second_name", "email"])
         for i in range(1000):
             request_data = []
             id = i + 1
@@ -74,8 +71,6 @@ def generate_data():
             request_data.append(second_name)
             email = EMAIL[randint(0, 7)]
             request_data.append(email)
-            message_id = 'none'
-            request_data.append(message_id)
             writer.writerow(request_data)
 
 

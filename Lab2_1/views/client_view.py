@@ -17,11 +17,9 @@ class ClientListCreateAPIView(ListCreateAPIView):
         request_serializer = self.get_serializer(data=request_data)
         request_serializer.is_valid(raise_exception=True)
         request_obj = request_serializer.save()
-        # user_id = int(request_data.pop('client')[0])
-        request_obj.email = "some randommmmmmmmmmmmmmmmmm"  # PROPERTY INJECTION
+        request_obj.email = "some randommmmmmmmmmmmmmmmmm"
         request_obj.save()
         return Response(request_serializer.data, status=status.HTTP_201_CREATED)
-
 
 
 class ClientRetrieveUpdateAPIView(RetrieveUpdateDestroyAPIView):
